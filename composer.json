@@ -1,0 +1,13 @@
+{
+    "name": "be-framework/app",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "Be\\App\\": "src/"
+        }
+    },
+    "require": {
+        "be-framework/be": "0.x-dev",
+        "ray/di": "^2.18"
+    }
+}

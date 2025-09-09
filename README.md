@@ -1,6 +1,6 @@
-# Be Framework App
+# Be Framework Application Skeleton
 
-Be Framework greeting demo using [Be Framework](https://github.com/koriym/be-framework).
+Application skeleton for [Be Framework](https://github.com/koriym/be-framework).
 
 ## Installation
 
@@ -10,8 +10,8 @@ composer install
 
 ## Usage
 
+Implement your application logic and run:
+
 ```bash
 php bin/app.php
 ```
-
-Demonstrates greeting generation based on input context and style.

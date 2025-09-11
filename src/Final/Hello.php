@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Be\App\Being;
+namespace Be\App\Final;
 
 use Be\App\Reason\Greeting;
 use Ray\Di\Di\Inject;

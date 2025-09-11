@@ -19,7 +19,7 @@ $becoming = new Becoming($injector, __NAMESPACE__ . '\\Semantic');
 $input = new HelloInput('World');
 try {
     $hello = $becoming($input);
-    assert($hello instanceof Being\Hello);
+    assert($hello instanceof Final\Hello);
     echo $hello->greeting . PHP_EOL;
 } catch (SemanticVariableException $e) {
     $errorMessage = $e->getErrors()->getMessages('ja')[0];

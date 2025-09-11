@@ -5,6 +5,8 @@ declare(strict_types=1);
 namespace Be\App\Being;
 
 use Be\Framework\Attribute\Be;
+use Be\App\Final\FormalGreeting;
+use Be\App\Final\CasualGreeting;
 use Be\App\Reason\CasualStyle;
 use Be\App\Reason\FormalStyle;
 use Be\App\Tag\English;

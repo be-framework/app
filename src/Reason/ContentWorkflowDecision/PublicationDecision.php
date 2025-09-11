@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Be\App\Reason;
+namespace Be\App\Reason\ContentWorkflowDecision;
 
 /**
  * Publication decision ontology - determines content publication readiness

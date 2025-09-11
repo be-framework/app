@@ -11,9 +11,14 @@ use DomainException;
  * Semantic validation exception for invalid user role
  */
 #[Message([
-    'en' => 'Invalid user role specified.',
-    'ja' => '無効なユーザーロールが指定されました。'
+    'en' => 'Invalid user role "{role}" (allowed: subscriber, contributor, editor, admin)',
+    'ja' => '無効なユーザーロール"{role}" (許可: subscriber, contributor, editor, admin)'
 ])]
 final class InvalidRoleException extends DomainException
 {
+    public function __construct(
+        public readonly string $role
+    ) {
+        parent::__construct("Invalid user role \"{$role}\" (allowed: subscriber, contributor, editor, admin)");
+    }
 }

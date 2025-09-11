@@ -16,6 +16,7 @@ final readonly class ContentCreationInput
         public string $email,
         public string $category,
         public array $tags = [],
-        public ?string $publishDate = null
+        public ?string $publishDate = null,
+        public string $userRole = 'contributor'
     ) {}
 }

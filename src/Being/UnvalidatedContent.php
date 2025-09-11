@@ -16,6 +16,7 @@ final readonly class UnvalidatedContent
         #[Input] public string $email,
         #[Input] public string $category,
         #[Input] public array $tags,
-        #[Input] public ?string $publishDate
+        #[Input] public ?string $publishDate,
+        #[Input] public string $userRole = 'contributor'
     ) {}
 }

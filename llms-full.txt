@@ -586,12 +586,18 @@ final class EmptyNameException extends DomainException
 }
 ```
 
-#### 5. Injectable Services (`src/Reason/`) - Ontological Capabilities
-**Critical Insight**: Reason/ contains **ontological services** that provide domain-specific capabilities - not just generic services, but **ways of being and acting** in specific contexts.
+#### 5. Reason Services (`src/Reason/`) - Core Metamorphosis Determinants
+**CRITICAL UNDERSTANDING**: Reason services are the **核心的要素** (core elements) of Be Framework's metamorphosis process. They are **NOT** simple OOP service classes, but ontological determinants that:
+
+1. **決定「何になるか」** - Determine "what objects become" during metamorphosis
+2. **定義「どのように振る舞うか」** - Define "how they behave" once transformed
+
+**Reason Service Architecture Pattern**:
 
 ```php
 /**
- * Casual communication style ontology defining informal interaction patterns
+ * Reason services are instantiated WITHIN Being constructors
+ * They determine metamorphosis outcomes and provide behavioral capabilities
  */
 final readonly class CasualStyle
 {
@@ -607,27 +613,159 @@ final readonly class CasualStyle
 }
 
 /**
- * Formal communication style ontology defining business interaction patterns
+ * Being constructor instantiates Reason to determine its own nature
  */
-final readonly class FormalStyle  
+final readonly class BeGreeting
 {
-    public function formalGreeting(string $name): string
-    {
-        return "Good day, Mr./Ms. {$name}. How may I assist you today?";
-    }
+    public CasualStyle|FormalStyle $being;
 
-    public function formalBusinessCard(string $name): string
-    {
-        return "┌─────────────────────────┐\n" .
-               "│ 📋 BUSINESS CARD        │\n" .
-               "│ Mr./Ms. {$name}         │\n" .
-               "│ Status: Professional    │\n" .
-               "└─────────────────────────┘";
+    public function __construct(
+        #[Input] #[English] public string $name,
+        #[Input] string $style
+    ) {
+        // Reason determines metamorphosis outcome
+        $this->being = $style == 'formal' ? new FormalStyle() : new CasualStyle();
+    }
+}
+
+/**
+ * Final Being uses Reason capabilities for behavioral definition
+ */
+final readonly class CasualGreeting
+{
+    public string $greeting;
+    public string $emoji;
+
+    public function __construct(
+        #[Input] public string $name,
+        #[Input] public CasualStyle $being  // Reason flows as Input!
+    ) {
+        // Reason defines "how to behave"
+        $this->greeting = $this->being->casualGreeting($name);
+        $this->emoji = $this->being->casualEmoji();
     }
 }
 ```
 
-**Reason/ Philosophy**: These are not mere "utility classes" - they are **ontological style definitions** that encapsulate **ways of existing** in different social/business contexts. They provide the "reasons" (capabilities/modes) for being in specific ways.
+**Key Reason Service Principles**:
+
+1. **Not Dependency Injection**: Reason services are not injected from DI container - they are instantiated within Being constructors
+2. **Metamorphosis Determinants**: They decide what union type variant an object becomes
+3. **Behavioral Providers**: They provide methods that define how final Beings behave
+4. **Flow Through Chain**: Reason objects flow through metamorphosis chains as `#[Input]` parameters
+5. **Ontological Essence**: They embody "ways of being" rather than "things to do"
+
+**Correct vs Incorrect Reason Usage**:
+
+❌ **WRONG - OOP Service Pattern**:
+```php
+// This is NOT how Reason services work
+class ContentWorkflowDecision {
+    public function __construct(
+        #[Inject] PublicationDecision $publicationDecision,
+        #[Inject] SecurityPolicy $securityPolicy
+    ) {}
+}
+```
+
+✅ **CORRECT - Metamorphosis Determinant Pattern**:
+```php
+// Reason determines metamorphosis within Being constructor
+final readonly class BeContent {
+    public PublishedContent|DraftContent $being;
+    
+    public function __construct(...) {
+        $decision = new ContentDecision();  // Instantiated, not injected
+        $this->being = $decision->determineContentState(...) 
+            ? new PublishedContent(...) 
+            : new DraftContent(...);
+    }
+}
+```
+
+## Current Implementation Analysis - Critical Issues Identified
+
+### Problem 1: Incorrect Reason Service Architecture
+**Current Implementation** (`ContentWorkflowDecision.php`):
+- ❌ Uses dependency injection pattern: `__construct(private PublicationDecision $publicationDecision, ...)`
+- ❌ Configured in DI container (`AppModule.php`)
+- ❌ Injected into Being constructor: `#[Inject] ContentWorkflowDecision $workflowDecision`
+- ❌ Complex hierarchical OOP service structure with sub-services
+
+**What Should Be Done**:
+- ✅ Reason services should be simple classes instantiated within Being constructors
+- ✅ Remove all `#[Inject]` usage for Reason services
+- ✅ Remove Reason service bindings from DI container
+- ✅ Simplify to single-purpose Reason classes that determine metamorphosis outcomes
+
+### Problem 2: Missing Self-Determining Being Layer
+**Current Implementation**:
+- ❌ `ProcessedContent` directly creates final Being types without intermediate self-determining layer
+- ❌ No union type property for metamorphosis self-determination
+
+**What Should Be Done**:
+- ✅ Add intermediate `BeProcessedContent` class with union type property
+- ✅ Implement self-determining pattern where Being decides its own nature
+- ✅ Final Being classes should receive Reason as `#[Input]` parameter
+
+### Problem 3: Reason Services Not Flowing Through Metamorphosis Chain
+**Current Implementation**:
+- ❌ Reason services are only used for decision-making, not behavioral definition
+- ❌ Final Being classes don't receive Reason objects as input
+- ❌ No behavioral methods defined by Reason services
+
+**What Should Be Done**:
+- ✅ Reason objects should flow through chain as `#[Input]` parameters
+- ✅ Final Being classes should use Reason methods for behavioral definition
+- ✅ Reason services should provide "how to behave" methods, not just decisions
+
+### Required Implementation Changes
+
+1. **Restructure Reason Services**:
+   ```php
+   // Simple Reason class - no DI dependencies
+   final readonly class PublicationDecision
+   {
+       public function shouldPublishImmediately(string $userRole, ?string $publishDate): bool
+       public function getPublicationBehavior(): string
+   }
+   ```
+
+2. **Add Self-Determining Being**:
+   ```php
+   #[Be([PublishedContent::class, DraftContent::class, PendingReviewContent::class, RejectedContent::class])]
+   final readonly class BeProcessedContent
+   {
+       public PublishedContent|DraftContent|PendingReviewContent|RejectedContent $being;
+       
+       public function __construct(...) {
+           $decision = new ContentDecision();  // Instantiated, not injected
+           $this->being = match($decision->determineType(...)) { ... };
+       }
+   }
+   ```
+
+3. **Update Final Beings to Use Reason Behaviors**:
+   ```php
+   final readonly class PublishedContent
+   {
+       public string $publicationMessage;
+       
+       public function __construct(
+           #[Input] public string $title,
+           #[Input] public PublicationDecision $decision  // Reason as Input!
+       ) {
+           $this->publicationMessage = $this->decision->getPublicationBehavior();
+       }
+   }
+   ```
+
+### Summary: Implementation Philosophy Correction
+The current implementation treats Reason services as complex OOP business logic services injected via DI. This completely misses the Be Framework philosophy where Reason services are simple ontological determinants that:
+1. Are instantiated within Being constructors (not injected)
+2. Determine what objects become during metamorphosis
+3. Define how final objects behave through behavioral methods
+4. Flow through metamorphosis chains as `#[Input]` parameters
 
 #### 6. DI Configuration (`src/Module/`)
 Ray.Di module configuration:

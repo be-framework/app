@@ -1,6 +1,6 @@
 # Be Framework App
 
-Be Framework greeting demo using [Be Framework](https://github.com/koriym/be-framework).
+Be Framework greeting demo using [Be Framework](https://be-framework.github.io/).
 
 ## Installation
 

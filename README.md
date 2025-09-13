@@ -1,6 +1,6 @@
 # Be Framework Application Skeleton
 
-Application skeleton for [Be Framework](https://github.com/koriym/be-framework).
+Application skeleton for [Be Framework](https://be-framework.github.io/).
 
 ## Installation
 

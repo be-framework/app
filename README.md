@@ -1,17 +1,25 @@
-# Be Framework Application Skeleton
+# Be Framework Skeleton
 
-Application skeleton for [Be Framework](https://be-framework.github.io/).
+Project skeleton for [Be Framework](https://be-framework.github.io/).
 
-## Installation
+## Getting Started
 
 ```bash
+composer create-project be-framework/skeleton MyProject
+cd MyProject
 composer install
 ```
 
 ## Usage
 
-Implement your application logic and run:
-
 ```bash
 php bin/app.php
 ```
+
+## Namespace
+
+Change `Be\Skeleton` to your own namespace using AI tools or find-and-replace.
+
+## Learn More
+
+- [Be Framework Documentation](https://be-framework.github.io/)

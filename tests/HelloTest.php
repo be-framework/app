@@ -2,23 +2,26 @@
 
 declare(strict_types=1);
 
-namespace Be\Skeleton;
+namespace Be\Skeleton\Tests;
 
 use Be\Skeleton\Input\HelloInput;
 use Be\Skeleton\Module\AppModule;
+use Be\Skeleton\Final\Hello;
 use Be\Framework\Becoming;
 use PHPUnit\Framework\TestCase;
 use Ray\Di\Injector;
 
 class HelloTest extends TestCase
 {
+    private const SEMANTIC_NS = 'Be\\Skeleton\\Semantic';
+
     public function testHello(): void
     {
         $injector = new Injector(new AppModule());
-        $becoming = new Becoming($injector, __NAMESPACE__ . '\\Semantic');
+        $becoming = new Becoming($injector, self::SEMANTIC_NS);
         $input = new HelloInput('World');
         $hello = $becoming($input);
-        $this->assertInstanceOf(Final\Hello::class, $hello);
+        $this->assertInstanceOf(Hello::class, $hello);
         $this->assertSame('Hello World', $hello->greeting);
     }
 }

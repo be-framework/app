@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Be\Skeleton\Tests;
+namespace Be\Skeleton;
 
 use Be\Skeleton\Input\HelloInput;
 use Be\Skeleton\Module\AppModule;

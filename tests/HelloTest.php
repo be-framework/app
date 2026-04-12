@@ -13,12 +13,10 @@ use Ray\Di\Injector;
 
 class HelloTest extends TestCase
 {
-    private const SEMANTIC_NS = 'Be\\Skeleton\\Semantic';
-
     public function testHello(): void
     {
         $injector = new Injector(new AppModule());
-        $becoming = new Becoming($injector, self::SEMANTIC_NS);
+        $becoming = new Becoming($injector, 'Be\Skeleton\Semantic');
         $input = new HelloInput('World');
         $hello = $becoming($input);
         $this->assertInstanceOf(Hello::class, $hello);

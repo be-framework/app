@@ -1,6 +1,6 @@
 <?php
 
-namespace Be\App\Reason;
+namespace Be\Skeleton\Reason;
 
 final class Greeting
 {

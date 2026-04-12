@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Be\App\Semantic;
+namespace Be\Skeleton\Semantic;
 
 use Be\Framework\Attribute\Validate;
-use Be\App\Exception\EmptyNameException;
-use Be\App\Exception\InvalidNameFormatException;
-use Be\App\Tag\English;
+use Be\Skeleton\Exception\EmptyNameException;
+use Be\Skeleton\Exception\InvalidNameFormatException;
+use Be\Skeleton\Tag\English;
 use function preg_match;
 use function trim;
 

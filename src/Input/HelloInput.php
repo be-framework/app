@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Be\App\Input;
+namespace Be\Skeleton\Input;
 
-use Be\App\Final\Hello;
+use Be\Skeleton\Final\Hello;
 use Be\Framework\Attribute\Be;
 
 /** Input for Hello being　*/

@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Be\App;
+namespace Be\Skeleton;
 
 require dirname(__DIR__) . '/vendor/autoload.php';
 
-use Be\App\Input\HelloInput;
-use Be\App\Module\AppModule;
+use Be\Skeleton\Input\HelloInput;
+use Be\Skeleton\Module\AppModule;
 use Be\Framework\Becoming;
 use Be\Framework\Exception\SemanticVariableException;
 use Ray\Di\Injector;

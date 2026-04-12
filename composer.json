@@ -1,9 +1,9 @@
 {
-    "name": "be-framework/app",
+    "name": "be-framework/skeleton",
     "type": "project",
     "autoload": {
         "psr-4": {
-            "Be\\App\\": "src/"
+            "Be\\Skeleton\\": "src/"
         }
     },
     "require": {

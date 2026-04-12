@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Be\App\Module;
+namespace Be\Skeleton\Module;
 
-use Be\App\Reason\Greeting;
+use Be\Skeleton\Reason\Greeting;
 use Ray\Di\AbstractModule;
 
 final class AppModule extends AbstractModule

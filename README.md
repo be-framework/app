@@ -1,11 +1,12 @@
-# Be Framework App
+# Be Framework Skeleton
 
-Be Framework greeting demo using [Be Framework](https://github.com/koriym/be-framework).
+Project skeleton for [Be Framework](https://be-framework.github.io/).
 
-## Installation
+## Getting Started
 
 ```bash
-composer install
+composer create-project be-framework/skeleton MyProject
+cd MyProject
 ```
 
 ## Usage
@@ -14,4 +15,10 @@ composer install
 php bin/app.php
 ```
 
-Demonstrates greeting generation based on input context and style.
+## Namespace
+
+Change `Be\Skeleton` to your own namespace using AI tools or find-and-replace.
+
+## Learn More
+
+- [Be Framework Documentation](https://be-framework.github.io/)

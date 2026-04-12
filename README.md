@@ -7,7 +7,6 @@ Project skeleton for [Be Framework](https://be-framework.github.io/).
 ```bash
 composer create-project be-framework/skeleton MyProject
 cd MyProject
-composer install
 ```
 
 ## Usage

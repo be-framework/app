@@ -195,16 +195,16 @@
         },
         {
             "name": "koriym/semantic-logger",
-            "version": "0.3.0",
+            "version": "0.3.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/koriym/Koriym.SemanticLogger.git",
-                "reference": "0194241a52dfaca56c7d67e519468d3d19bbf5ff"
+                "reference": "100377f2ab05b4c9c5632d214391fdcda34f37e3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/koriym/Koriym.SemanticLogger/zipball/0194241a52dfaca56c7d67e519468d3d19bbf5ff",
-                "reference": "0194241a52dfaca56c7d67e519468d3d19bbf5ff",
+                "url": "https://api.github.com/repos/koriym/Koriym.SemanticLogger/zipball/100377f2ab05b4c9c5632d214391fdcda34f37e3",
+                "reference": "100377f2ab05b4c9c5632d214391fdcda34f37e3",
                 "shasum": ""
             },
             "require": {
@@ -246,9 +246,9 @@
             "description": "Type-safe structured logging with schema validation and meaningful context",
             "support": {
                 "issues": "https://github.com/koriym/Koriym.SemanticLogger/issues",
-                "source": "https://github.com/koriym/Koriym.SemanticLogger/tree/0.3.0"
+                "source": "https://github.com/koriym/Koriym.SemanticLogger/tree/0.3.1"
             },
-            "time": "2026-04-17T10:02:37+00:00"
+            "time": "2026-04-17T13:14:02+00:00"
         },
         {
             "name": "marc-mabe/php-enum",

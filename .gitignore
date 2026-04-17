@@ -1,4 +1,5 @@
 vendor/
-var/log/semantic-dev-*
+var/log/*
+!var/log/.gitkeep
 .phpunit.result.cache
 becoming.html

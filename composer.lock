@@ -12,16 +12,16 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/koriym/be-framework.git",
-                "reference": "0eada3017fb32d5e97e5f1f787c955057667f9ab"
+                "reference": "fa7a06fd57c8e1077fc93797a46cb6651cf15a8d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/koriym/be-framework/zipball/0eada3017fb32d5e97e5f1f787c955057667f9ab",
-                "reference": "0eada3017fb32d5e97e5f1f787c955057667f9ab",
+                "url": "https://api.github.com/repos/koriym/be-framework/zipball/fa7a06fd57c8e1077fc93797a46cb6651cf15a8d",
+                "reference": "fa7a06fd57c8e1077fc93797a46cb6651cf15a8d",
                 "shasum": ""
             },
             "require": {
-                "koriym/semantic-logger": "^0.2.1",
+                "koriym/semantic-logger": "^0.3",
                 "php": "^8.3",
                 "ray/di": "^2.18",
                 "ray/input-query": "^v1.0"
@@ -62,7 +62,7 @@
                 "issues": "https://github.com/koriym/be-framework/issues",
                 "source": "https://github.com/koriym/be-framework/tree/0.x"
             },
-            "time": "2026-04-16T15:12:43+00:00"
+            "time": "2026-04-17T09:57:24+00:00"
         },
         {
             "name": "justinrainbow/json-schema",
@@ -195,16 +195,16 @@
         },
         {
             "name": "koriym/semantic-logger",
-            "version": "v0.2.1",
+            "version": "0.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/koriym/Koriym.SemanticLogger.git",
-                "reference": "894ca2a869c2c40f3004ac043c4a2a615f624ad7"
+                "reference": "0194241a52dfaca56c7d67e519468d3d19bbf5ff"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/koriym/Koriym.SemanticLogger/zipball/894ca2a869c2c40f3004ac043c4a2a615f624ad7",
-                "reference": "894ca2a869c2c40f3004ac043c4a2a615f624ad7",
+                "url": "https://api.github.com/repos/koriym/Koriym.SemanticLogger/zipball/0194241a52dfaca56c7d67e519468d3d19bbf5ff",
+                "reference": "0194241a52dfaca56c7d67e519468d3d19bbf5ff",
                 "shasum": ""
             },
             "require": {
@@ -213,11 +213,13 @@
             },
             "require-dev": {
                 "bamarni/composer-bin-plugin": "^1.8",
+                "koriym/xdebug-mcp": "1.x-dev",
                 "phpunit/phpunit": "^10.5"
             },
             "bin": [
                 "bin/semantic-mcp",
-                "bin/validate-semantic-log.php"
+                "bin/validate-semantic-log.php",
+                "bin/stree"
             ],
             "type": "library",
             "extra": {
@@ -244,9 +246,9 @@
             "description": "Type-safe structured logging with schema validation and meaningful context",
             "support": {
                 "issues": "https://github.com/koriym/Koriym.SemanticLogger/issues",
-                "source": "https://github.com/koriym/Koriym.SemanticLogger/tree/v0.2.1"
+                "source": "https://github.com/koriym/Koriym.SemanticLogger/tree/0.3.0"
             },
-            "time": "2025-08-09T10:26:09+00:00"
+            "time": "2026-04-17T10:02:37+00:00"
         },
         {
             "name": "marc-mabe/php-enum",
@@ -516,7 +518,7 @@
         },
         {
             "name": "symfony/polyfill-php83",
-            "version": "v1.34.0",
+            "version": "v1.36.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-php83.git",
@@ -572,7 +574,7 @@
                 "shim"
             ],
             "support": {
-                "source": "https://github.com/symfony/polyfill-php83/tree/v1.34.0"
+                "source": "https://github.com/symfony/polyfill-php83/tree/v1.36.0"
             },
             "funding": [
                 {

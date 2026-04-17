@@ -17,5 +17,11 @@
     },
     "require-dev": {
         "phpunit/phpunit": "^11.0"
+    },
+    "scripts": {
+        "smoke": "php bin/smoke.php",
+        "stree": "php bin/smoke.php | vendor/bin/stree /dev/stdin",
+        "stree:full": "php bin/smoke.php | vendor/bin/stree --full /dev/stdin",
+        "stree:html": "php bin/smoke.php | vendor/bin/stree --format=html /dev/stdin > becoming.html && echo 'saved: becoming.html'"
     }
 }

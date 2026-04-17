@@ -1,0 +1,29 @@
+<?php
+
+declare(strict_types=1);
+
+namespace Be\Skeleton\Becoming;
+
+use Be\Framework\Becoming;
+use Be\Framework\BecomingInterface;
+use Koriym\SemanticLogger\DevLogger;
+use Koriym\SemanticLogger\SemanticLoggerInterface;
+use Override;
+
+final class DevBecoming implements BecomingInterface
+{
+    public function __construct(
+        private readonly Becoming $becoming,
+        private readonly SemanticLoggerInterface $logger,
+    ) {
+    }
+
+    #[Override]
+    public function __invoke(object $input): object
+    {
+        $result = ($this->becoming)($input);
+        (new DevLogger(dirname(__DIR__, 2) . '/var/log'))->log($this->logger);
+
+        return $result;
+    }
+}

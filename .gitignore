@@ -1,1 +1,4 @@
 vendor/
+var/log/semantic-dev-*
+.phpunit.result.cache
+becoming.html

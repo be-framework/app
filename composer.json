@@ -19,9 +19,15 @@
         "phpunit/phpunit": "^11.0"
     },
     "scripts": {
-        "smoke": "php bin/smoke.php",
-        "stree": "php bin/smoke.php && vendor/bin/stree $(ls -t var/log/*.json | head -1)",
-        "stree:full": "php bin/smoke.php && vendor/bin/stree --full $(ls -t var/log/*.json | head -1)",
-        "stree:html": "php bin/smoke.php && vendor/bin/stree --format=html $(ls -t var/log/*.json | head -1) > becoming.html && echo 'saved: becoming.html'"
+        "smoke": "XDEBUG_MODE=trace php -d xdebug.use_compression=0 -d extension=xhprof.so bin/smoke.php",
+        "stree": [
+            "@smoke",
+            "vendor/bin/stree $(ls -t var/log/*.json | head -1)"
+        ],
+        "stree:full": [
+            "@smoke",
+            "vendor/bin/stree --full $(ls -t var/log/*.json | head -1)"
+        ],
+        "stree:html": "echo 'stree:html has been removed; use composer stree:full instead'"
     }
 }

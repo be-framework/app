@@ -3,3 +3,4 @@ var/log/*
 !var/log/.gitkeep
 .phpunit.result.cache
 becoming.html
+.ai/

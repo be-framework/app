@@ -13,6 +13,7 @@
     },
     "require": {
         "be-framework/be": "0.x-dev",
+        "koriym/semantic-logger": "^0.4",
         "ray/di": "^2.18"
     },
     "require-dev": {

@@ -10,10 +10,9 @@ Skeleton for [Be Framework](https://be-framework.github.io/) applications. Names
 
 ```bash
 php bin/app.php                 # Run the app (production path via AppModule)
-composer smoke                  # Run DevModule path (writes var/log/*.json)
-composer stree                  # Smoke + render latest log as semantic tree
+composer dev                    # Run DevModule path (writes var/log/*.json, prints the greeting)
+composer stree                  # @dev + render latest log as semantic tree
 composer stree:full             # Same, verbose
-composer stree:html             # Render to becoming.html
 vendor/bin/phpunit              # All tests
 vendor/bin/phpunit --filter testHello tests/HelloTest.php   # Single test
 ```
@@ -34,9 +33,9 @@ Directory layout maps to roles in that pipeline:
 - `src/Module/` — Ray.Di modules. `AppModule` installs `BeModule` + app bindings; `DevModule` installs `AppModule` and rebinds `BecomingInterface` to `DevBecoming`, which wraps `Becoming` and writes a semantic log on every invocation (consumed by `stree`).
 - `src/Becoming/DevBecoming.php` — the dev-mode wrapper; logs to `var/log/` via `Koriym\SemanticLogger\DevLogger`.
 - `bin/app.php` — production entry. Installs `AppModule` and instantiates `Becoming` directly, passing the Semantic namespace as a constructor argument. Catches `SemanticVariableException` and prints a localized (`ja`) message. Produces user-visible output (the greeting).
-- `bin/smoke.php` — dev entry used by `composer smoke`/`stree`. Installs `DevModule` and resolves `BecomingInterface` through DI, so `DevBecoming` runs instead of raw `Becoming` and a semantic log is written to `var/log/`. No stdout output, no try/catch — the log (consumed by `stree`) is the artifact.
+- `bin/dev.php` — dev entry used by `composer dev`/`stree`. Installs `DevModule` and resolves `BecomingInterface` through DI, so `DevBecoming` runs instead of raw `Becoming` and a semantic log is written to `var/log/`. Prints the greeting too so the only observable difference from `app.php` is "a log file was also produced".
 
-The two entries look asymmetric on purpose: `app.php` demonstrates the minimal manual wiring a framework user needs; `smoke.php` shows the DI-resolved variant that module swapping relies on. Both ultimately invoke the same metamorphosis; the only real difference is which Module is installed.
+The two entries are intentionally parallel: `app.php` demonstrates the minimal manual wiring a framework user needs; `dev.php` shows the DI-resolved variant that module swapping (and the `stree` loop) relies on. Both ultimately invoke the same metamorphosis; the only real difference is which Module is installed.
 
 When adding a new stage: create the next class (usually in `Final/` if terminal, otherwise an intermediate with its own `#[Be(...)]`), add a `Semantic\<VarName>` validator for each new constructor parameter name that isn't already registered, and bind any `#[Inject]` services in `AppModule`.
 

@@ -20,15 +20,14 @@
         "phpunit/phpunit": "^11.0"
     },
     "scripts": {
-        "smoke": "XDEBUG_MODE=trace php -d xdebug.use_compression=0 -d extension=xhprof.so bin/smoke.php",
+        "dev": "XDEBUG_MODE=trace php -d xdebug.use_compression=0 -d extension=xhprof.so bin/dev.php",
         "stree": [
-            "@smoke",
+            "@dev",
             "vendor/bin/stree $(ls -t var/log/*.json | head -1)"
         ],
         "stree:full": [
-            "@smoke",
+            "@dev",
             "vendor/bin/stree --full $(ls -t var/log/*.json | head -1)"
-        ],
-        "stree:html": "echo 'stree:html has been removed; use composer stree:full instead'"
+        ]
     }
 }

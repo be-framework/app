@@ -30,5 +30,11 @@
             "@dev",
             "vendor/bin/stree --full $(ls -t var/log/*.json | head -1)"
         ]
+    },
+    "scripts-descriptions": {
+        "app": "Run the Hello World pipeline in production mode (MODULE=app, no semantic log).",
+        "dev": "Run the Hello World pipeline in dev mode — writes a semantic log to var/log/<timestamp>.json (Xdebug trace + xhprof enabled).",
+        "stree": "Run @dev, then render the latest var/log/*.json as a compact tree.",
+        "stree:full": "Run @dev, then render the latest var/log/*.json as a full tree (every context key as a leaf)."
     }
 }

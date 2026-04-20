@@ -11,11 +11,11 @@
  * (`Be\Skeleton\Module\<Ucfirst>Module`); defaults to `dev`.
  *
  * Examples:
- *   php bin/app.php                                    # default → 'hello?name=World'
- *   php bin/app.php 'hello?name=Alice'
- *   php bin/app.php '/hello?name=Alice'                # leading slash also accepted
- *   MODULE=app php bin/app.php 'hello?name=Alice'      # production-style
- *   php bin/app.php 'order?customerId=42&items[]=P1001&items[]=P1002'
+ *   php bin/be.php                                    # default → 'hello?name=World'
+ *   php bin/be.php 'hello?name=Alice'
+ *   php bin/be.php '/hello?name=Alice'                # leading slash also accepted
+ *   MODULE=app php bin/be.php 'hello?name=Alice'      # production-style
+ *   php bin/be.php 'order?customerId=42&items[]=P1001&items[]=P1002'
  *
  * Note: declare(strict_types=1) is intentionally omitted so query-string
  * values (always strings) can coerce to typed Input constructor params

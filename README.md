@@ -17,8 +17,8 @@ composer stree    # render the latest log as a tree
 composer app      # production-style run (no log)
 
 # direct invocation (BEAR.Sunday-style URI)
-php bin/app.php 'hello?name=Alice'
-MODULE=app php bin/app.php 'order?customerId=42&items[]=P1001'
+php bin/be.php 'hello?name=Alice'
+MODULE=app php bin/be.php 'order?customerId=42&items[]=P1001'
 ```
 
 See `CLAUDE.md` for the dev loop, `MODULE` env var, and the URI invocation convention.

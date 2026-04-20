@@ -16,19 +16,19 @@ composer app                    # MODULE=app — production-style, no log
 composer stree                  # @dev + render the latest log as a semantic tree
 composer stree:full             # Same, verbose
 
-# Direct invocation: bin/app.php takes one BEAR.Sunday-style URI argument
+# Direct invocation: bin/be.php takes one BEAR.Sunday-style URI argument
 #   <input>?<key>=<value>&...
-php bin/app.php                                          # default → 'hello?name=World'
-php bin/app.php 'hello?name=Alice'
-MODULE=app php bin/app.php 'hello?name=Alice'
-php bin/app.php 'order?customerId=42&items[]=P1001'
+php bin/be.php                                          # default → 'hello?name=World'
+php bin/be.php 'hello?name=Alice'
+MODULE=app php bin/be.php 'hello?name=Alice'
+php bin/be.php 'order?customerId=42&items[]=P1001'
 
 vendor/bin/phpunit
 ```
 
 ## Skeleton-specific wiring
 
-- **`bin/app.php`** — single universal entry. Parses the CLI argument with `parse_url` + `parse_str`, maps the path to `Be\Skeleton\Input\<Ucfirst>Input` and spreads the query as named constructor args. Module is resolved via the `MODULE` env var (default `dev`) → `Be\Skeleton\Module\<Ucfirst>Module`. The same URI shape mirrors what a future `be://` scheme could route from BEAR.Sunday.
+- **`bin/be.php`** — single universal entry. Parses the CLI argument with `parse_url` + `parse_str`, maps the path to `Be\Skeleton\Input\<Ucfirst>Input` and spreads the query as named constructor args. Module is resolved via the `MODULE` env var (default `dev`) → `Be\Skeleton\Module\<Ucfirst>Module`. The same URI shape mirrors what a future `be://` scheme could route from BEAR.Sunday.
 - **`src/Module/DevModule.php`** — installs `AppModule` then rebinds `BecomingInterface` to `DevBecoming`. Adding a new mode is a matter of dropping `XxxModule` into `src/Module/` and invoking with `MODULE=xxx`.
 - **`src/Becoming/DevBecoming.php`** — wraps `Becoming` and writes a semantic log to `var/log/<timestamp>.json` from a `finally` block, so failed pipelines are captured too (consumed by `composer stree`).
 - **`var/log/*`** is git-ignored except `.gitkeep`; `stree` reads the newest JSON there.

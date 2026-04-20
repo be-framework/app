@@ -6,6 +6,8 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 Skeleton for [Be Framework](https://be-framework.github.io/) applications. Namespace `Be\Skeleton\` is intended to be replaced with the app's own namespace.
 
+For end-to-end guidance (project setup → design workflow → dev loop → debugging) see the [`be-skills`](https://github.com/be-framework/be-skills) Claude Code plugin (`be` and `be-semantic` skills).
+
 ## Commands
 
 ```bash

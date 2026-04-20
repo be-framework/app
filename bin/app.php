@@ -11,8 +11,9 @@
  * (`Be\Skeleton\Module\<Ucfirst>Module`); defaults to `dev`.
  *
  * Examples:
- *   php bin/app.php hello                              # MODULE=dev, no args
+ *   php bin/app.php                                    # default → 'hello?name=World'
  *   php bin/app.php 'hello?name=Alice'
+ *   php bin/app.php '/hello?name=Alice'                # leading slash also accepted
  *   MODULE=app php bin/app.php 'hello?name=Alice'      # production-style
  *   php bin/app.php 'order?customerId=42&items[]=P1001&items[]=P1002'
  *
@@ -27,14 +28,18 @@ require dirname(__DIR__) . '/vendor/autoload.php';
 
 use Be\Framework\BecomingInterface;
 use Be\Framework\Exception\SemanticVariableException;
+use InvalidArgumentException;
 use Ray\Di\Injector;
+use Throwable;
 
 use function array_slice;
+use function class_exists;
 use function dirname;
 use function getenv;
 use function json_encode;
 use function parse_str;
 use function parse_url;
+use function trim;
 use function ucfirst;
 
 use const JSON_PRETTY_PRINT;
@@ -45,17 +50,30 @@ $module = getenv('MODULE') ?: 'dev';
 $invocation = array_slice($argv, 1)[0] ?? 'hello?name=World';
 
 $parts = parse_url($invocation);
-$inputName = $parts['path'] ?? 'hello';
+// Strip leading slash so '/hello?…' (URI-form) and 'hello?…' both resolve.
+$inputName = trim($parts['path'] ?? 'hello', '/') ?: 'hello';
 parse_str($parts['query'] ?? '', $opts);
 
 $moduleClass = __NAMESPACE__ . '\\Module\\' . ucfirst($module) . 'Module';
 $inputClass  = __NAMESPACE__ . '\\Input\\'  . ucfirst($inputName) . 'Input';
 
 try {
+    if (! class_exists($moduleClass)) {
+        throw new InvalidArgumentException("Unknown module: {$module} (expected {$moduleClass})");
+    }
+
+    if (! class_exists($inputClass)) {
+        throw new InvalidArgumentException("Unknown input: {$inputName} (expected {$inputClass})");
+    }
+
     $injector = new Injector(new $moduleClass());
     $becoming = $injector->getInstance(BecomingInterface::class);
     $final = $becoming(new $inputClass(...$opts));
     echo ($final->greeting ?? json_encode($final, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE)) . PHP_EOL;
 } catch (SemanticVariableException $e) {
     echo $e->getErrors()->getMessages('ja')[0] . PHP_EOL;
+    exit(1);
+} catch (Throwable $e) {
+    echo $e->getMessage() . PHP_EOL;
+    exit(1);
 }

@@ -21,9 +21,12 @@ final class DevBecoming implements BecomingInterface
     #[Override]
     public function __invoke(object $input): object
     {
-        $result = ($this->becoming)($input);
-        (new DevLogger(dirname(__DIR__, 2) . '/var/log'))->log($this->logger);
-
-        return $result;
+        try {
+            return ($this->becoming)($input);
+        } finally {
+            // Always emit the semantic log — failed runs are exactly the ones
+            // we most want to inspect via `composer stree`.
+            (new DevLogger(dirname(__DIR__, 2) . '/var/log'))->log($this->logger);
+        }
     }
 }

@@ -9,10 +9,17 @@ Skeleton for [Be Framework](https://be-framework.github.io/) applications. Names
 ## Commands
 
 ```bash
-php bin/app.php                 # Run the app (production path via AppModule)
-composer dev                    # Run DevModule path (writes var/log/*.json, prints the greeting)
+composer dev                    # MODULE=dev (default) — writes var/log/*.json, prints greeting
+composer app                    # MODULE=app — production-style, no log
 composer stree                  # @dev + render latest log as semantic tree
 composer stree:full             # Same, verbose
+
+# Direct invocation (BEAR.Sunday-style URI: <input>?<query>)
+php bin/app.php                                          # default → "Hello World" with log
+php bin/app.php 'hello?name=Alice'                       # custom name
+MODULE=app php bin/app.php 'hello?name=Alice'            # production-style
+php bin/app.php 'order?customerId=42&items[]=P1001'      # different Input + multi args
+
 vendor/bin/phpunit              # All tests
 vendor/bin/phpunit --filter testHello tests/HelloTest.php   # Single test
 ```
@@ -32,10 +39,9 @@ Directory layout maps to roles in that pipeline:
 - `src/Exception/` — domain exceptions thrown from validators. Prefer specific exceptions (e.g. `EmptyNameException`) over generic `\*Exception`.
 - `src/Module/` — Ray.Di modules. `AppModule` installs `BeModule` + app bindings; `DevModule` installs `AppModule` and rebinds `BecomingInterface` to `DevBecoming`, which wraps `Becoming` and writes a semantic log on every invocation (consumed by `stree`).
 - `src/Becoming/DevBecoming.php` — the dev-mode wrapper; logs to `var/log/` via `Koriym\SemanticLogger\DevLogger`.
-- `bin/app.php` — production entry. Installs `AppModule` and instantiates `Becoming` directly, passing the Semantic namespace as a constructor argument. Catches `SemanticVariableException` and prints a localized (`ja`) message. Produces user-visible output (the greeting).
-- `bin/dev.php` — dev entry used by `composer dev`/`stree`. Installs `DevModule` and resolves `BecomingInterface` through DI, so `DevBecoming` runs instead of raw `Becoming` and a semantic log is written to `var/log/`. Prints the greeting too so the only observable difference from `app.php` is "a log file was also produced".
+- `bin/app.php` — single universal entry. The CLI argument is parsed as a BEAR.Sunday-style URI (`<input>?<key>=<value>&...`), so `'hello?name=Alice'` resolves to `new HelloInput(name: 'Alice')`. The `MODULE` env var selects which Module class to instantiate (`MODULE=dev` → `DevModule`, default `dev`); production deployments must set `MODULE=app` (or another module) explicitly. `parse_url` + `parse_str` handle multi-args and arrays naturally, mirroring HTTP query semantics — the same syntax could one day route via a `be://` URI scheme from BEAR.Sunday.
 
-The two entries are intentionally parallel: `app.php` demonstrates the minimal manual wiring a framework user needs; `dev.php` shows the DI-resolved variant that module swapping (and the `stree` loop) relies on. Both ultimately invoke the same metamorphosis; the only real difference is which Module is installed.
+The Module choice is the only configuration: every Module is just a Ray.Di module composition. `AppModule` is the production wiring; `DevModule` installs `AppModule` then rebinds `BecomingInterface` to `DevBecoming` (the wrapper that writes a semantic log to `var/log/<timestamp>.json` on every invocation, consumed by `stree`). Adding a new mode (test, staging, ...) is a matter of dropping `XxxModule` into `src/Module/` and invoking with `MODULE=xxx`.
 
 When adding a new stage: create the next class (usually in `Final/` if terminal, otherwise an intermediate with its own `#[Be(...)]`), add a `Semantic\<VarName>` validator for each new constructor parameter name that isn't already registered, and bind any `#[Inject]` services in `AppModule`.
 

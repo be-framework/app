@@ -30,5 +30,6 @@ Change `Be\Skeleton` to your own namespace using AI tools or find-and-replace.
 ## Learn More
 
 - [Be Framework Documentation](https://be-framework.github.io/)
+- [Directory Layout](https://be-framework.github.io/manuals/1.0/en/convention/directory-layout.html) — what each `src/<dir>/` slot is for.
 - [be-skills](https://github.com/be-framework/be-skills) — Claude Code skills for building Be Framework apps end-to-end (project setup, design workflow, dev loop, debugging).
 - [be-patterns](https://github.com/be-framework/be-patterns) — eight runnable pattern demos (Linear, Diamond, Branching, Cascade Diamond, Complex Convergence, …).

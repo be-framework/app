@@ -11,16 +11,15 @@ For Be Framework methodology (project setup, design workflow, patterns, debuggin
 ## Commands
 
 ```bash
-composer dev                    # MODULE=dev (default) — runs the pipeline, writes var/log/<timestamp>.json
-composer app                    # MODULE=app — production-style, no log
-composer stree                  # @dev + render the latest log as a semantic tree
-composer stree:full             # Same, verbose
+composer dev                    # semantic log only — writes var/log/<timestamp>.json
+composer profile                # semantic profiling — writes var/log/<timestamp>.json
+composer stree                  # render the latest log as a semantic tree
+composer stree:full             # semantic full tree with full props and close.profile details
 
 # Direct invocation: bin/be.php takes one BEAR.Sunday-style URI argument
 #   <input>?<key>=<value>&...
 php bin/be.php                                          # default → 'hello?name=World'
 php bin/be.php 'hello?name=Alice'
-MODULE=app php bin/be.php 'hello?name=Alice'
 php bin/be.php 'order?customerId=42&items[]=P1001'
 
 vendor/bin/phpunit

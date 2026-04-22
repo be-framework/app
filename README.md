@@ -12,16 +12,18 @@ cd MyProject
 ## Usage
 
 ```bash
-composer dev      # run with semantic logging → var/log/<timestamp>.json
+composer dev      # semantic log only → var/log/<timestamp>.json
+composer profile  # semantic profiling → var/log/<timestamp>.json
 composer stree    # render the latest log as a tree
-composer app      # production-style run (no log)
+composer stree:full # render the latest log as a semantic full tree
 
 # direct invocation (BEAR.Sunday-style URI)
+php bin/be.php
 php bin/be.php 'hello?name=Alice'
-MODULE=app php bin/be.php 'order?customerId=42&items[]=P1001'
+php bin/be.php 'order?customerId=42&items[]=P1001'
 ```
 
-See `CLAUDE.md` for the dev loop, `MODULE` env var, and the URI invocation convention.
+Run `composer dev` or `composer profile` before `composer stree` if you need a fresh log. See `CLAUDE.md` for the dev loop, `MODULE` env var, and the URI invocation convention.
 
 ## Namespace
 

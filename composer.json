@@ -20,21 +20,15 @@
         "phpunit/phpunit": "^11.0"
     },
     "scripts": {
-        "app": "MODULE=app php bin/be.php 'hello?name=World'",
-        "dev": "XDEBUG_MODE=trace php -d xdebug.use_compression=0 -d extension=xhprof.so bin/be.php 'hello?name=World'",
-        "stree": [
-            "@dev",
-            "vendor/bin/stree $(ls -t var/log/*.json | head -1)"
-        ],
-        "stree:full": [
-            "@dev",
-            "vendor/bin/stree --full $(ls -t var/log/*.json | head -1)"
-        ]
+        "dev": "php bin/be.php 'hello?name=World'",
+        "profile": "XDEBUG_MODE=trace php -d xdebug.use_compression=0 -d extension=xhprof.so bin/be.php 'hello?name=World'",
+        "stree": "vendor/bin/stree $(ls -t var/log/*.json | head -1)",
+        "stree:full": "vendor/bin/stree --full $(ls -t var/log/*.json | head -1)"
     },
     "scripts-descriptions": {
-        "app": "Run the Hello World pipeline in production mode (MODULE=app, no semantic log).",
-        "dev": "Run the Hello World pipeline in dev mode — writes a semantic log to var/log/<timestamp>.json (Xdebug trace + xhprof enabled).",
-        "stree": "Run @dev, then render the latest var/log/*.json as a compact tree.",
-        "stree:full": "Run @dev, then render the latest var/log/*.json as a full tree (every context key as a leaf)."
+        "dev": "Run the Hello World pipeline in dev mode — writes a semantic log to var/log/<timestamp>.json without Xdebug/XHProf profiling.",
+        "profile": "Run the Hello World pipeline with semantic profiling — writes a semantic log to var/log/<timestamp>.json (uncompressed Xdebug trace + xhprof enabled).",
+        "stree": "Render the latest var/log/*.json as a compact tree.",
+        "stree:full": "Render the latest var/log/*.json as a semantic full tree with full props and close.profile details."
     }
 }

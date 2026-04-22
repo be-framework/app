@@ -4,24 +4,24 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0c2f82a913172aa22f42068d37712dbe",
+    "content-hash": "81895b4c6f79c8e1a735fe89d0182a56",
     "packages": [
         {
             "name": "be-framework/be",
-            "version": "0.x-dev",
+            "version": "dev-wrap-chain-span",
             "source": {
                 "type": "git",
                 "url": "https://github.com/koriym/be-framework.git",
-                "reference": "e857c914fec0ec0675230f19c0b9dc028a76c722"
+                "reference": "32e7ba5ee9250a3a3c3a1c2563fd0926a2f38300"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/koriym/be-framework/zipball/e857c914fec0ec0675230f19c0b9dc028a76c722",
-                "reference": "e857c914fec0ec0675230f19c0b9dc028a76c722",
+                "url": "https://api.github.com/repos/koriym/be-framework/zipball/32e7ba5ee9250a3a3c3a1c2563fd0926a2f38300",
+                "reference": "32e7ba5ee9250a3a3c3a1c2563fd0926a2f38300",
                 "shasum": ""
             },
             "require": {
-                "koriym/semantic-logger": "^0.5",
+                "koriym/semantic-logger": "^0.7",
                 "php": "^8.3",
                 "ray/di": "^2.18",
                 "ray/input-query": "^v1.0"
@@ -36,7 +36,6 @@
                 "phpunit/phpunit": "^12.2",
                 "vimeo/psalm": "^6.0@dev"
             },
-            "default-branch": true,
             "type": "library",
             "autoload": {
                 "psr-4": {
@@ -60,9 +59,9 @@
             "description": "Be Framework - The Ontological Programming Framework for PHP",
             "support": {
                 "issues": "https://github.com/koriym/be-framework/issues",
-                "source": "https://github.com/koriym/be-framework/tree/0.x"
+                "source": "https://github.com/koriym/be-framework/tree/wrap-chain-span"
             },
-            "time": "2026-04-21T08:56:45+00:00"
+            "time": "2026-04-22T03:36:13+00:00"
         },
         {
             "name": "justinrainbow/json-schema",
@@ -195,16 +194,16 @@
         },
         {
             "name": "koriym/semantic-logger",
-            "version": "1.x-dev",
+            "version": "0.7.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/koriym/Koriym.SemanticLogger.git",
-                "reference": "648e37ca28eec75d19a6a81abe189cb788e08488"
+                "reference": "be13b159482159d1c79c3a5ff1942d443dfe3d37"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/koriym/Koriym.SemanticLogger/zipball/648e37ca28eec75d19a6a81abe189cb788e08488",
-                "reference": "648e37ca28eec75d19a6a81abe189cb788e08488",
+                "url": "https://api.github.com/repos/koriym/Koriym.SemanticLogger/zipball/be13b159482159d1c79c3a5ff1942d443dfe3d37",
+                "reference": "be13b159482159d1c79c3a5ff1942d443dfe3d37",
                 "shasum": ""
             },
             "require": {
@@ -215,7 +214,6 @@
                 "bamarni/composer-bin-plugin": "^1.8",
                 "phpunit/phpunit": "^10.5"
             },
-            "default-branch": true,
             "bin": [
                 "bin/validate-semantic-log.php",
                 "bin/stree"
@@ -245,9 +243,9 @@
             "description": "Type-safe structured logging with schema validation and meaningful context",
             "support": {
                 "issues": "https://github.com/koriym/Koriym.SemanticLogger/issues",
-                "source": "https://github.com/koriym/Koriym.SemanticLogger/tree/1.x"
+                "source": "https://github.com/koriym/Koriym.SemanticLogger/tree/0.7.0"
             },
-            "time": "2026-04-21T16:11:54+00:00"
+            "time": "2026-04-22T03:00:33+00:00"
         },
         {
             "name": "marc-mabe/php-enum",
@@ -2381,16 +2379,15 @@
     ],
     "aliases": [
         {
-            "package": "koriym/semantic-logger",
-            "version": "1.9999999.9999999.9999999-dev",
-            "alias": "0.5.x-dev",
-            "alias_normalized": "0.5.9999999.9999999-dev"
+            "package": "be-framework/be",
+            "version": "dev-wrap-chain-span",
+            "alias": "0.1.0",
+            "alias_normalized": "0.1.0.0"
         }
     ],
     "minimum-stability": "stable",
     "stability-flags": {
-        "be-framework/be": 20,
-        "koriym/semantic-logger": 20
+        "be-framework/be": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

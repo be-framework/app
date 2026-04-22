@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "81895b4c6f79c8e1a735fe89d0182a56",
+    "content-hash": "62f79ad92dd84659c70aa2e291ef4bcc",
     "packages": [
         {
             "name": "be-framework/be",
-            "version": "dev-wrap-chain-span",
+            "version": "0.x-dev",
             "source": {
                 "type": "git",
                 "url": "https://github.com/koriym/be-framework.git",
-                "reference": "32e7ba5ee9250a3a3c3a1c2563fd0926a2f38300"
+                "reference": "c2073bfbe043fdeeae7e5620af7d4731e2ad43d9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/koriym/be-framework/zipball/32e7ba5ee9250a3a3c3a1c2563fd0926a2f38300",
-                "reference": "32e7ba5ee9250a3a3c3a1c2563fd0926a2f38300",
+                "url": "https://api.github.com/repos/koriym/be-framework/zipball/c2073bfbe043fdeeae7e5620af7d4731e2ad43d9",
+                "reference": "c2073bfbe043fdeeae7e5620af7d4731e2ad43d9",
                 "shasum": ""
             },
             "require": {
@@ -36,6 +36,7 @@
                 "phpunit/phpunit": "^12.2",
                 "vimeo/psalm": "^6.0@dev"
             },
+            "default-branch": true,
             "type": "library",
             "autoload": {
                 "psr-4": {
@@ -59,9 +60,9 @@
             "description": "Be Framework - The Ontological Programming Framework for PHP",
             "support": {
                 "issues": "https://github.com/koriym/be-framework/issues",
-                "source": "https://github.com/koriym/be-framework/tree/wrap-chain-span"
+                "source": "https://github.com/koriym/be-framework/tree/0.x"
             },
-            "time": "2026-04-22T03:36:13+00:00"
+            "time": "2026-04-22T17:50:33+00:00"
         },
         {
             "name": "justinrainbow/json-schema",
@@ -2380,7 +2381,7 @@
     "aliases": [
         {
             "package": "be-framework/be",
-            "version": "dev-wrap-chain-span",
+            "version": "0.9999999.9999999.9999999-dev",
             "alias": "0.1.0",
             "alias_normalized": "0.1.0.0"
         }

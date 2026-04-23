@@ -5,7 +5,7 @@ Project skeleton for [Be Framework](https://be-framework.github.io/).
 ## Getting Started
 
 ```bash
-composer create-project be-framework/skeleton MyProject
+composer create-project be-framework/skeleton MyProject --stability dev
 cd MyProject
 ```
 

@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Be\Skeleton\Module;
+namespace Be\App\Module;
 
 use Be\Framework\Becoming;
 use Be\Framework\BecomingInterface;
-use Be\Skeleton\Becoming\DevBecoming;
+use Be\App\Becoming\DevBecoming;
 use Koriym\SemanticLogger\SemanticLoggerInterface;
 use Ray\Di\AbstractModule;
 use Ray\Di\Scope;

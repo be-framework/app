@@ -4,11 +4,11 @@
  * Universal entry point for a Be Framework app.
  *
  * Invocation mirrors a URI: `<input>?<query>` where:
- *   - `<input>` is mapped to `Be\Skeleton\Input\<Ucfirst>Input`
+ *   - `<input>` is mapped to `Be\App\Input\<Ucfirst>Input`
  *   - `<query>` is parsed by `parse_str()` and spread as named constructor args
  *
  * The Module is selected by the `MODULE` environment variable
- * (`Be\Skeleton\Module\<Ucfirst>Module`); defaults to `dev`.
+ * (`Be\App\Module\<Ucfirst>Module`); defaults to `dev`.
  *
  * Examples:
  *   php bin/be.php                                    # default → 'hello?name=World'
@@ -22,7 +22,7 @@
  * (int / float / bool) under PHP's standard coercion rules.
  */
 
-namespace Be\Skeleton;
+namespace Be\App;
 
 require dirname(__DIR__) . '/vendor/autoload.php';
 

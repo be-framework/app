@@ -3,12 +3,12 @@
     "type": "project",
     "autoload": {
         "psr-4": {
-            "Be\\Skeleton\\": "src/"
+            "Be\\App\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Be\\Skeleton\\": "tests/"
+            "Be\\App\\": "tests/"
         }
     },
     "require": {

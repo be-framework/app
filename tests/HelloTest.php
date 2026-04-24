@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace Be\App;
 
+use Be\App\Final\Hello;
 use Be\App\Input\HelloInput;
 use Be\App\Module\AppModule;
-use Be\App\Final\Hello;
 use Be\Framework\Becoming;
 use PHPUnit\Framework\TestCase;
 use Ray\Di\Injector;

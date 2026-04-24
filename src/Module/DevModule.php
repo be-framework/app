@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace Be\App\Module;
 
+use Be\App\Becoming\DevBecoming;
 use Be\Framework\Becoming;
 use Be\Framework\BecomingInterface;
-use Be\App\Becoming\DevBecoming;
 use Koriym\SemanticLogger\SemanticLoggerInterface;
 use Ray\Di\AbstractModule;
 use Ray\Di\Scope;

@@ -4,8 +4,9 @@ declare(strict_types=1);
 
 namespace Be\App\Semantic;
 
-use Be\Framework\Attribute\Validate;
 use Be\App\Exception\EmptyNameException;
+use Be\Framework\Attribute\Validate;
+
 use function trim;
 
 /**

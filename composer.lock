@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "62f79ad92dd84659c70aa2e291ef4bcc",
+    "content-hash": "b68e352f0a7a2f1b65a9a661e45796ee",
     "packages": [
         {
             "name": "be-framework/be",
@@ -12,16 +12,16 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/koriym/be-framework.git",
-                "reference": "c2073bfbe043fdeeae7e5620af7d4731e2ad43d9"
+                "reference": "6f473181f95d258bb55d655a10e74d034d4f57ea"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/koriym/be-framework/zipball/c2073bfbe043fdeeae7e5620af7d4731e2ad43d9",
-                "reference": "c2073bfbe043fdeeae7e5620af7d4731e2ad43d9",
+                "url": "https://api.github.com/repos/koriym/be-framework/zipball/6f473181f95d258bb55d655a10e74d034d4f57ea",
+                "reference": "6f473181f95d258bb55d655a10e74d034d4f57ea",
                 "shasum": ""
             },
             "require": {
-                "koriym/semantic-logger": "^0.7",
+                "koriym/semantic-logger": "^0.8",
                 "php": "^8.3",
                 "ray/di": "^2.18",
                 "ray/input-query": "^v1.0"
@@ -62,7 +62,7 @@
                 "issues": "https://github.com/koriym/be-framework/issues",
                 "source": "https://github.com/koriym/be-framework/tree/0.x"
             },
-            "time": "2026-04-22T17:50:33+00:00"
+            "time": "2026-04-24T11:31:53+00:00"
         },
         {
             "name": "justinrainbow/json-schema",
@@ -195,16 +195,16 @@
         },
         {
             "name": "koriym/semantic-logger",
-            "version": "0.7.0",
+            "version": "0.8.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/koriym/Koriym.SemanticLogger.git",
-                "reference": "be13b159482159d1c79c3a5ff1942d443dfe3d37"
+                "reference": "11ceb9e6d7a9e4723736f66bce9be78eb8a5b94d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/koriym/Koriym.SemanticLogger/zipball/be13b159482159d1c79c3a5ff1942d443dfe3d37",
-                "reference": "be13b159482159d1c79c3a5ff1942d443dfe3d37",
+                "url": "https://api.github.com/repos/koriym/Koriym.SemanticLogger/zipball/11ceb9e6d7a9e4723736f66bce9be78eb8a5b94d",
+                "reference": "11ceb9e6d7a9e4723736f66bce9be78eb8a5b94d",
                 "shasum": ""
             },
             "require": {
@@ -244,9 +244,9 @@
             "description": "Type-safe structured logging with schema validation and meaningful context",
             "support": {
                 "issues": "https://github.com/koriym/Koriym.SemanticLogger/issues",
-                "source": "https://github.com/koriym/Koriym.SemanticLogger/tree/0.7.0"
+                "source": "https://github.com/koriym/Koriym.SemanticLogger/tree/0.8.0"
             },
-            "time": "2026-04-22T03:00:33+00:00"
+            "time": "2026-04-24T08:34:32+00:00"
         },
         {
             "name": "marc-mabe/php-enum",

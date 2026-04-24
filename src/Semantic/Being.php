@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Be\Skeleton\Semantic;
+namespace Be\App\Semantic;
 
 use Be\Framework\Attribute\Validate;
 
@@ -22,7 +22,7 @@ use Be\Framework\Attribute\Validate;
 final class Being
 {
     #[Validate]
-    public function validate(string $being): void
+    public function validate(mixed $being): void
     {
         // No-op by default. Add constraints here if needed.
     }

@@ -1,6 +1,6 @@
-# Be Framework Skeleton
+# Be Framework App
 
-Project skeleton for [Be Framework](https://be-framework.github.io/).
+Project template for [Be Framework](https://be-framework.github.io/).
 
 ## Getting Started
 
@@ -27,7 +27,7 @@ Run `composer dev` or `composer profile` before `composer stree` if you need a f
 
 ## Namespace
 
-Change `Be\Skeleton` to your own namespace using AI tools or find-and-replace.
+The generated app uses the `Be\App` namespace by default. You can rename it to your own namespace with AI tools or find-and-replace.
 
 ## Learn More
 

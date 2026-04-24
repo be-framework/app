@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Be\Skeleton\Module;
+namespace Be\App\Module;
 
 use Koriym\SemanticLogger\DevSemanticLogger;
 use Koriym\SemanticLogger\SemanticLogger;

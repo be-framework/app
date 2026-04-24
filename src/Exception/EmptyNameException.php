@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Be\Skeleton\Exception;
+namespace Be\App\Exception;
 
 use Be\Framework\Attribute\Message;
 use DomainException;

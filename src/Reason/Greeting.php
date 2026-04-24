@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Be\Skeleton\Reason;
+namespace Be\App\Reason;
 
 final class Greeting
 {

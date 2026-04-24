@@ -2,10 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Be\Skeleton\Semantic;
+namespace Be\App\Semantic;
 
+use Be\App\Exception\EmptyNameException;
 use Be\Framework\Attribute\Validate;
-use Be\Skeleton\Exception\EmptyNameException;
+
 use function trim;
 
 /**

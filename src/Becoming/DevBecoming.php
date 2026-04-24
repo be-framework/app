@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Be\Skeleton\Becoming;
+namespace Be\App\Becoming;
 
 use Be\Framework\Becoming;
 use Be\Framework\BecomingInterface;

@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Be\Skeleton\Final;
+namespace Be\App\Final;
 
-use Be\Skeleton\Reason\Greeting;
+use Be\App\Reason\Greeting;
 use Ray\Di\Di\Inject;
 use Ray\InputQuery\Attribute\Input;
 

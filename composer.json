@@ -1,6 +1,7 @@
 {
     "name": "be-framework/skeleton",
     "type": "project",
+    "license": "MIT",
     "autoload": {
         "psr-4": {
             "Be\\App\\": "src/"

@@ -22,21 +22,26 @@
             Be Framework loads classes via #[Be] attributes and constructs them via
             reflection in Becoming. Psalm's reachability analysis cannot see these
             dynamic call paths, so the stock unused-* rules fire false positives on
-            valid framework patterns.
+            valid framework patterns. Scopes are narrowed to the framework-reflected
+            directories only; src/Exception is intentionally NOT suppressed so that
+            orphaned exception classes are still surfaced.
         -->
         <UnusedClass>
             <errorLevel type="suppress">
-                <directory name="src" />
+                <directory name="src/Input" />
+                <directory name="src/Module" />
+                <directory name="src/Semantic" />
             </errorLevel>
         </UnusedClass>
         <PossiblyUnusedMethod>
             <errorLevel type="suppress">
-                <directory name="src" />
+                <directory name="src/Becoming" />
+                <directory name="src/Final" />
             </errorLevel>
         </PossiblyUnusedMethod>
         <PossiblyUnusedProperty>
             <errorLevel type="suppress">
-                <directory name="src" />
+                <directory name="src/Final" />
             </errorLevel>
         </PossiblyUnusedProperty>
         <UnusedParam>

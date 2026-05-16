@@ -18,13 +18,16 @@
         "ray/di": "^2.18"
     },
     "require-dev": {
-        "phpunit/phpunit": "^11.0"
+        "phpunit/phpunit": "^11.0",
+        "vimeo/psalm": "^6.0@dev",
+        "be-framework/psalm-plugin": "dev-main"
     },
     "scripts": {
         "dev": "php bin/be.php 'hello?name=World'",
         "profile": "XDEBUG_MODE=trace php -d xdebug.use_compression=0 -d extension=xhprof.so bin/be.php 'hello?name=World'",
         "stree": "vendor/bin/stree $(ls -t var/log/*.json | head -1)",
-        "stree:full": "vendor/bin/stree --full $(ls -t var/log/*.json | head -1)"
+        "stree:full": "vendor/bin/stree --full $(ls -t var/log/*.json | head -1)",
+        "psalm": "psalm --show-info=false"
     },
     "scripts-descriptions": {
         "dev": "Run the Hello World pipeline in dev mode — writes a semantic log to var/log/<timestamp>.json without Xdebug/XHProf profiling.",

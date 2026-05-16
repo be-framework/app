@@ -20,7 +20,7 @@
     "require-dev": {
         "phpunit/phpunit": "^11.0",
         "vimeo/psalm": "^6.0@dev",
-        "be-framework/psalm-plugin": "dev-main"
+        "be-framework/psalm-plugin": "1.x-dev"
     },
     "scripts": {
         "dev": "php bin/be.php 'hello?name=World'",

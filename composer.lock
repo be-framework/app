@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c18e679e2678faed20de70a18fca04b5",
+    "content-hash": "23166e8043d59437e3e5315c03b006b1",
     "packages": [
         {
             "name": "be-framework/be",
@@ -1415,7 +1415,7 @@
         },
         {
             "name": "be-framework/psalm-plugin",
-            "version": "dev-main",
+            "version": "1.x-dev",
             "source": {
                 "type": "git",
                 "url": "https://github.com/be-framework/psalm-plugin.git",
@@ -1469,7 +1469,7 @@
             ],
             "support": {
                 "issues": "https://github.com/be-framework/psalm-plugin/issues",
-                "source": "https://github.com/be-framework/psalm-plugin/tree/main"
+                "source": "https://github.com/be-framework/psalm-plugin/tree/1.x"
             },
             "time": "2026-05-16T01:26:40+00:00"
         },
@@ -5468,12 +5468,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/vimeo/psalm.git",
-                "reference": "6ff4aa2b472a5a4dd16a75c807da633d2c2e9368"
+                "reference": "ca151242c84d8962b921bf59c509b49362ce0eec"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/vimeo/psalm/zipball/6ff4aa2b472a5a4dd16a75c807da633d2c2e9368",
-                "reference": "6ff4aa2b472a5a4dd16a75c807da633d2c2e9368",
+                "url": "https://api.github.com/repos/vimeo/psalm/zipball/ca151242c84d8962b921bf59c509b49362ce0eec",
+                "reference": "ca151242c84d8962b921bf59c509b49362ce0eec",
                 "shasum": ""
             },
             "require": {
@@ -5579,7 +5579,7 @@
                 "issues": "https://github.com/vimeo/psalm/issues",
                 "source": "https://github.com/vimeo/psalm"
             },
-            "time": "2026-05-07T08:31:35+00:00"
+            "time": "2026-05-16T06:57:57+00:00"
         },
         {
             "name": "webmozart/assert",

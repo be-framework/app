@@ -6,10 +6,12 @@ namespace Be\App\Module;
 
 use Be\App\Reason\Greeting;
 use Be\Framework\Module\BeModule;
+use Override;
 use Ray\Di\AbstractModule;
 
 final class AppModule extends AbstractModule
 {
+    #[Override]
     protected function configure(): void
     {
         $this->install(new BeModule('Be\\App\\Semantic'));

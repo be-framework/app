@@ -1,4 +1,5 @@
 vendor/
+composer.lock
 var/log/*
 !var/log/.gitkeep
 .phpunit.result.cache

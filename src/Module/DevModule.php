@@ -8,11 +8,13 @@ use Be\App\Becoming\DevBecoming;
 use Be\Framework\Becoming;
 use Be\Framework\BecomingInterface;
 use Koriym\SemanticLogger\SemanticLoggerInterface;
+use Override;
 use Ray\Di\AbstractModule;
 use Ray\Di\Scope;
 
 final class DevModule extends AbstractModule
 {
+    #[Override]
     protected function configure(): void
     {
         $this->install(new AppModule());

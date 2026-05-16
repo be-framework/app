@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "23166e8043d59437e3e5315c03b006b1",
+    "content-hash": "90f3ad224d8d460716176986dd67e21c",
     "packages": [
         {
             "name": "be-framework/be",
@@ -5464,16 +5464,16 @@
         },
         {
             "name": "vimeo/psalm",
-            "version": "6.x-dev",
+            "version": "6.16.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/vimeo/psalm.git",
-                "reference": "ca151242c84d8962b921bf59c509b49362ce0eec"
+                "reference": "f1f5de594dc76faf8784e02d3dc4716c91c6f6ac"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/vimeo/psalm/zipball/ca151242c84d8962b921bf59c509b49362ce0eec",
-                "reference": "ca151242c84d8962b921bf59c509b49362ce0eec",
+                "url": "https://api.github.com/repos/vimeo/psalm/zipball/f1f5de594dc76faf8784e02d3dc4716c91c6f6ac",
+                "reference": "f1f5de594dc76faf8784e02d3dc4716c91c6f6ac",
                 "shasum": ""
             },
             "require": {
@@ -5528,7 +5528,6 @@
                 "ext-curl": "In order to send data to shepherd",
                 "ext-igbinary": "^2.0.5 is required, used to serialize caching data"
             },
-            "default-branch": true,
             "bin": [
                 "psalm",
                 "psalm-language-server",
@@ -5579,7 +5578,7 @@
                 "issues": "https://github.com/vimeo/psalm/issues",
                 "source": "https://github.com/vimeo/psalm"
             },
-            "time": "2026-05-16T06:57:57+00:00"
+            "time": "2026-03-19T10:56:09+00:00"
         },
         {
             "name": "webmozart/assert",
@@ -5655,12 +5654,13 @@
     "minimum-stability": "stable",
     "stability-flags": {
         "be-framework/be": 20,
-        "be-framework/psalm-plugin": 20,
-        "vimeo/psalm": 20
+        "be-framework/psalm-plugin": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
-    "platform": {},
+    "platform": {
+        "php": "^8.3"
+    },
     "platform-dev": {},
     "plugin-api-version": "2.9.0"
 }
